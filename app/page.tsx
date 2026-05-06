@@ -1,256 +1,344 @@
 import Link from 'next/link';
-import { 
-  Building2, 
-  Shield, 
-  Truck, 
-  Award, 
-  ArrowRight, 
-  CheckCircle2,
-  Star,
-  Users,
-  Package,
-  TrendingUp
-} from 'lucide-react';
+import Image from 'next/image';
+import { Phone, ArrowRight, CheckCircle2, Building2, Package, Truck, Award } from 'lucide-react';
+import productsData from '@/data/products.json';
+import CountUp from '@/components/CountUp';
 
-export default function Home() {
-  const features = [
-    {
-      icon: Shield,
-      title: 'Chất lượng đảm bảo',
-      description: 'Sản phẩm chính hãng, có nguồn gốc xuất xứ rõ ràng'
-    },
-    {
-      icon: Truck,
-      title: 'Giao hàng nhanh',
-      description: 'Vận chuyển tận nơi, đúng hẹn trong khu vực Thanh Hóa'
-    },
-    {
-      icon: Award,
-      title: 'Giá cạnh tranh',
-      description: 'Cam kết giá tốt nhất thị trường, nhiều ưu đãi'
-    },
-    {
-      icon: Users,
-      title: 'Tư vấn chuyên nghiệp',
-      description: 'Đội ngũ nhân viên giàu kinh nghiệm, tận tâm'
-    }
-  ];
+export default function HomePage() {
+  const { categories, products } = productsData;
 
-  const products = [
-    {
-      name: 'Xi măng',
-      description: 'Xi măng PCB30, PCB40 các loại',
-      image: '🏗️'
-    },
-    {
-      name: 'Sắt thép',
-      description: 'Thép Việt Nhật, Hòa Phát, Pomina',
-      image: '⚙️'
-    },
-    {
-      name: 'Gạch xây',
-      description: 'Gạch block, gạch đỏ, gạch không nung',
-      image: '🧱'
-    },
-    {
-      name: 'Cát đá',
-      description: 'Cát vàng, đá 1x2, đá 4x6',
-      image: '⛰️'
-    },
-    {
-      name: 'Sơn',
-      description: 'Sơn Dulux, Jotun, Nippon',
-      image: '🎨'
-    },
-    {
-      name: 'Vật liệu khác',
-      description: 'Ngói, ống nước, điện, phụ kiện',
-      image: '🔧'
-    }
-  ];
-
-  const stats = [
-    { icon: Users, value: '500+', label: 'Khách hàng tin tưởng' },
-    { icon: Package, value: '1000+', label: 'Đơn hàng hoàn thành' },
-    { icon: TrendingUp, value: '5+', label: 'Năm kinh nghiệm' },
-    { icon: Star, value: '4.9/5', label: 'Đánh giá trung bình' }
-  ];
+  // Get featured products (first 6)
+  const featuredProducts = products.slice(0, 6);
 
   return (
-    <div>
+    <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-blue-100 text-[#0d3354] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                ✨ Đối tác tin cậy cho mọi công trình
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Vật Liệu Xây Dựng
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0d3354] to-[#1a4d7a]">
-                  Chất Lượng Cao
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình - Chuyên cung cấp xi măng, sắt thép, gạch, cát đá và các vật liệu xây dựng chính hãng tại Thanh Hóa
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  href="/san-pham"
-                  className="bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
-                >
-                  Xem sản phẩm
-                  <ArrowRight size={20} />
-                </Link>
-                <Link 
-                  href="/lien-he"
-                  className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold border-2 border-gray-200 hover:border-[#0d3354] hover:text-[#0d3354] transition-all"
-                >
-                  Liên hệ ngay
-                </Link>
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/banner.jpg"
+            alt="Vật liệu xây dựng An Bình"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 py-24 lg:py-32">
+          <div className="max-w-3xl">
+            <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded text-sm font-bold mb-6 border border-white/20">
+              Vật liệu xây dựng chất lượng cao
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Công ty TNHH Kinh Doanh<br />
+              Vật Liệu Xây Dựng An Bình
+            </h1>
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+              Chuyên cung cấp xi măng, sắt thép, gạch, cát đá, sơn và các vật liệu xây dựng 
+              chính hãng tại Thanh Hóa
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                href="/san-pham"
+                className="bg-[#0d3354] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#1a4d7a] transition-colors shadow-lg"
+              >
+                Xem sản phẩm
+              </Link>
+              <a 
+                href="tel:0967565606"
+                className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-bold border border-white/30 hover:bg-white/20 transition-colors flex items-center gap-2"
+              >
+                <Phone size={20} />
+                0967565606
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Card - Overlapping Hero */}
+      <section className="relative -mt-16 z-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 lg:p-12">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  { value: 500, suffix: '+', label: 'Khách hàng tin tưởng' },
+                  { value: 1000, suffix: '+', label: 'Đơn hàng hoàn thành' },
+                  { value: 50, suffix: '+', label: 'Sản phẩm đa dạng' },
+                  { value: 2024, suffix: '', label: 'Năm thành lập' }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="text-4xl lg:text-5xl font-bold text-[#0d3354] mb-2 transition-transform group-hover:scale-110">
+                      <CountUp end={stat.value} suffix={stat.suffix} />
+                    </div>
+                    <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="relative bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-3xl p-8 shadow-2xl">
-                <Building2 size={300} className="text-white/20 mx-auto" />
-                <div className="absolute top-8 right-8 bg-white rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-500" size={24} />
-                    <div>
-                      <div className="font-bold text-gray-900">Chính hãng 100%</div>
-                      <div className="text-sm text-gray-600">Đảm bảo chất lượng</div>
-                    </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 bg-gray-50 mt-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Về chúng tôi
+                </h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình được thành lập năm 2024, 
+                    chuyên cung cấp các loại vật liệu xây dựng chất lượng cao tại Thanh Hóa.
+                  </p>
+                  <p>
+                    Chúng tôi cam kết cung cấp sản phẩm chính hãng từ các thương hiệu uy tín như 
+                    Hoàng Thạch, Nghi Sơn, Việt Nhật, Hòa Phát, Pomina, Viglacera, Dulux, Jotun...
+                  </p>
+                  <div className="pt-4">
+                    <Link 
+                      href="/gioi-thieu"
+                      className="inline-flex items-center gap-2 text-[#0d3354] font-bold hover:gap-3 transition-all"
+                    >
+                      Tìm hiểu thêm
+                      <ArrowRight size={20} />
+                    </Link>
                   </div>
                 </div>
               </div>
+              <div className="relative h-[320px] rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/banner-company.jpg"
+                  alt="Công ty An Bình"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
+      {/* Services */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Tại sao chọn An Bình?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Chúng tôi cam kết mang đến dịch vụ và sản phẩm tốt nhất cho khách hàng
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-2 border border-blue-100"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                  <feature.icon className="text-white" size={32} />
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Cam kết của chúng tôi
+              </h2>
+              <p className="text-gray-600">
+                Những giá trị mà chúng tôi mang lại cho khách hàng
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: Package,
+                  title: 'Hàng chính hãng',
+                  desc: '100% sản phẩm chính hãng, có tem nhãn đầy đủ'
+                },
+                {
+                  icon: Truck,
+                  title: 'Giao hàng nhanh',
+                  desc: 'Vận chuyển tận nơi trong khu vực Thanh Hóa'
+                },
+                {
+                  icon: Award,
+                  title: 'Giá cạnh tranh',
+                  desc: 'Cam kết giá tốt nhất thị trường'
+                },
+                {
+                  icon: CheckCircle2,
+                  title: 'Tư vấn tận tâm',
+                  desc: 'Đội ngũ nhân viên giàu kinh nghiệm'
+                }
+              ].map((service, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-[#0d3354] rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <service.icon className="text-white" size={28} />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {service.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[#0d3354]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="text-[#0d3354]" size={32} />
-                </div>
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Products Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Sản phẩm của chúng tôi
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Đa dạng các loại vật liệu xây dựng chất lượng cao
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] h-48 flex items-center justify-center text-8xl">
-                  {product.image}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {product.description}
-                  </p>
-                  <Link 
-                    href="/san-pham"
-                    className="text-[#0d3354] font-semibold hover:text-[#0d3354] flex items-center gap-2 group"
-                  >
-                    Xem chi tiết
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-end justify-between mb-12">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  Sản phẩm nổi bật
+                </h2>
+                <p className="text-gray-600">
+                  Các sản phẩm vật liệu xây dựng chất lượng cao
+                </p>
               </div>
-            ))}
+              <Link 
+                href="/san-pham"
+                className="hidden md:inline-flex items-center gap-2 text-[#0d3354] font-bold hover:gap-3 transition-all"
+              >
+                Xem tất cả
+                <ArrowRight size={20} />
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProducts.map((product) => (
+                <Link
+                  key={product.id}
+                  href={`/san-pham/${product.id}`}
+                  className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-[#0d3354] transition-all hover:shadow-lg"
+                >
+                  <div className="bg-gray-100 h-48 flex items-center justify-center">
+                    <span className="text-7xl transform group-hover:scale-110 transition-transform">
+                      {product.image}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <div className="text-xs font-bold text-[#0d3354] bg-blue-50 px-2 py-1 rounded inline-block mb-3">
+                      {product.brand}
+                    </div>
+                    <h3 className="text-base font-bold text-gray-900 mb-3 leading-snug group-hover:text-[#0d3354] transition-colors line-clamp-2 min-h-[48px]">
+                      {product.name}
+                    </h3>
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                      <span className="text-sm font-bold text-[#0d3354]">Liên hệ</span>
+                      <ArrowRight size={18} className="text-gray-400 group-hover:text-[#0d3354] group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8 md:hidden">
+              <Link 
+                href="/san-pham"
+                className="inline-flex items-center gap-2 text-[#0d3354] font-bold"
+              >
+                Xem tất cả sản phẩm
+                <ArrowRight size={20} />
+              </Link>
+            </div>
           </div>
-          <div className="text-center mt-12">
-            <Link 
-              href="/san-pham"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
-            >
-              Xem tất cả sản phẩm
-              <ArrowRight size={20} />
-            </Link>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Khách hàng nói gì về chúng tôi
+              </h2>
+              <p className="text-gray-600">
+                Những đánh giá thực tế từ khách hàng đã sử dụng dịch vụ
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: 'Anh Nguyễn Văn A',
+                  role: 'Chủ công trình tại Cẩm Thủy',
+                  content: 'Vật liệu chất lượng, giá cả hợp lý. Giao hàng đúng hẹn, nhân viên tư vấn nhiệt tình. Tôi rất hài lòng và sẽ tiếp tục sử dụng dịch vụ.',
+                  rating: 5
+                },
+                {
+                  name: 'Chị Trần Thị B',
+                  role: 'Xây nhà tại Thanh Hóa',
+                  content: 'Mua xi măng và sắt thép ở đây, hàng chính hãng, có đầy đủ giấy tờ. Giá tốt hơn nhiều nơi khác. Rất đáng tin cậy!',
+                  rating: 5
+                },
+                {
+                  name: 'Anh Lê Văn C',
+                  role: 'Nhà thầu xây dựng',
+                  content: 'Đã hợp tác nhiều công trình, An Bình luôn đảm bảo chất lượng và tiến độ giao hàng. Đội ngũ chuyên nghiệp, giá cạnh tranh.',
+                  rating: 5
+                }
+              ].map((testimonial, index) => (
+                <div 
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-[#0d3354] transition-all relative"
+                >
+                  {/* Quote Icon */}
+                  <div className="absolute top-6 right-6 text-6xl text-gray-200 font-serif leading-none">
+                    "
+                  </div>
+                  
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    ))}
+                  </div>
+
+                  {/* Content */}
+                  <p className="text-gray-700 leading-relaxed mb-6 relative z-10">
+                    {testimonial.content}
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4 pt-6 border-t border-gray-200">
+                    <div className="w-12 h-12 bg-[#0d3354] rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                      {testimonial.name.charAt(4)}
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white">
+      <section className="py-16 bg-[#0d3354] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Bạn cần tư vấn về vật liệu xây dựng?
+          <h2 className="text-3xl font-bold mb-4">
+            Cần tư vấn về vật liệu xây dựng?
           </h2>
-          <p className="text-xl mb-8 text-orange-100 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Liên hệ ngay với chúng tôi để được tư vấn miễn phí và nhận báo giá tốt nhất
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
+            <a 
+              href="tel:0967565606"
+              className="bg-white text-[#0d3354] px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-colors flex items-center gap-2"
+            >
+              <Phone size={20} />
+              0967565606
+            </a>
             <Link 
               href="/lien-he"
-              className="bg-white text-[#0d3354] px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
+              className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold border border-white/20 hover:bg-white/20 transition-colors"
             >
-              Liên hệ ngay
+              Gửi yêu cầu báo giá
             </Link>
-            <a 
-              href="tel:0123456789"
-              className="bg-[#0d3354] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0a2640] transition-all border-2 border-white/20"
-            >
-              Gọi: 0123 456 789
-            </a>
           </div>
         </div>
       </section>

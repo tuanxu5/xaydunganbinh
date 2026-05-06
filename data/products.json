@@ -1,0 +1,237 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "Tất cả sản phẩm",
+      "icon": "📦"
+    },
+    {
+      "id": "cement",
+      "name": "Xi măng",
+      "icon": "🏗️"
+    },
+    {
+      "id": "steel",
+      "name": "Sắt thép",
+      "icon": "⚙️"
+    },
+    {
+      "id": "brick",
+      "name": "Gạch xây",
+      "icon": "🧱"
+    },
+    {
+      "id": "sand",
+      "name": "Cát đá",
+      "icon": "⛰️"
+    },
+    {
+      "id": "paint",
+      "name": "Sơn",
+      "icon": "🎨"
+    },
+    {
+      "id": "other",
+      "name": "Vật liệu khác",
+      "icon": "🔧"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "cement",
+      "name": "Xi măng PCB30 Hoàng Thạch",
+      "brand": "Hoàng Thạch",
+      "shortDesc": "Xi măng Pooclăng hỗn hợp PCB30, phù hợp cho công trình dân dụng",
+      "description": "Xi măng Pooclăng hỗn hợp PCB30 Hoàng Thạch là sản phẩm xi măng chất lượng cao, được sản xuất theo công nghệ hiện đại, đáp ứng tiêu chuẩn TCVN 2682:2009. Sản phẩm phù hợp cho các công trình dân dụng như xây tường, đổ móng, trát tường.",
+      "unit": "Bao 50kg",
+      "image": "🏗️",
+      "specs": [
+        { "label": "Độ bền", "value": "30 MPa (sau 28 ngày)" },
+        { "label": "Thời gian đông kết đầu", "value": "≥ 45 phút" },
+        { "label": "Thời gian đông kết cuối", "value": "≤ 360 phút" },
+        { "label": "Độ mịn", "value": "≥ 2800 cm²/g" },
+        { "label": "Độ ổn định thể tích", "value": "≤ 10 mm" },
+        { "label": "Tiêu chuẩn", "value": "TCVN 2682:2009" }
+      ],
+      "features": [
+        "Độ bền nén cao, đảm bảo độ chắc chắn cho công trình",
+        "Chống thấm tốt, bảo vệ công trình khỏi ẩm mốc",
+        "Giá cả cạnh tranh, phù hợp với nhiều đối tượng",
+        "Hàng chính hãng, có tem nhãn và CO/CQ đầy đủ",
+        "Thời gian đông kết phù hợp, dễ thi công",
+        "Độ mịn cao, bám dính tốt"
+      ],
+      "applications": [
+        "Xây tường gạch các loại",
+        "Đổ móng nhà, móng công trình",
+        "Trát tường trong và ngoài",
+        "Làm sàn, lát nền",
+        "Các công trình dân dụng khác"
+      ],
+      "packaging": "Bao 50kg, đóng gói chuẩn, có tem nhãn rõ ràng",
+      "storage": "Bảo quản nơi khô ráo, tránh ẩm. Sử dụng trong vòng 3 tháng kể từ ngày sản xuất."
+    },
+    {
+      "id": "2",
+      "category": "cement",
+      "name": "Xi măng PCB40 Nghi Sơn",
+      "brand": "Nghi Sơn",
+      "shortDesc": "Xi măng Pooclăng hỗn hợp PCB40, độ bền cao cho cột dầm",
+      "description": "Xi măng Pooclăng hỗn hợp PCB40 Nghi Sơn là sản phẩm xi măng cao cấp với độ bền 40 MPa, phù hợp cho các công trình yêu cầu độ bền cao như cột, dầm, sàn bê tông. Sản phẩm được sản xuất bởi Công ty Xi măng Nghi Sơn - thương hiệu uy tín hàng đầu Việt Nam.",
+      "unit": "Bao 50kg",
+      "image": "🏗️",
+      "specs": [
+        { "label": "Độ bền", "value": "40 MPa (sau 28 ngày)" },
+        { "label": "Thời gian đông kết đầu", "value": "≥ 45 phút" },
+        { "label": "Thời gian đông kết cuối", "value": "≤ 360 phút" },
+        { "label": "Độ mịn", "value": "≥ 3000 cm²/g" },
+        { "label": "Độ ổn định thể tích", "value": "≤ 10 mm" },
+        { "label": "Tiêu chuẩn", "value": "TCVN 2682:2009" }
+      ],
+      "features": [
+        "Độ bền vượt trội 40 MPa, phù hợp công trình lớn",
+        "Đông kết nhanh, rút ngắn thời gian thi công",
+        "Chất lượng ổn định, đạt tiêu chuẩn TCVN",
+        "Thương hiệu Nghi Sơn uy tín",
+        "Độ mịn cao, bám dính tốt",
+        "Chống thấm, chống nứt hiệu quả"
+      ],
+      "applications": [
+        "Đổ bê tông cột, dầm, sàn",
+        "Công trình yêu cầu độ bền cao",
+        "Cầu, đường, công trình hạ tầng",
+        "Nhà cao tầng, công trình công nghiệp",
+        "Các kết cấu chịu lực"
+      ],
+      "packaging": "Bao 50kg, đóng gói chuẩn, có tem nhãn rõ ràng",
+      "storage": "Bảo quản nơi khô ráo, tránh ẩm. Sử dụng trong vòng 3 tháng kể từ ngày sản xuất."
+    },
+    {
+      "id": "3",
+      "category": "steel",
+      "name": "Thép Việt Nhật D10",
+      "brand": "Việt Nhật",
+      "shortDesc": "Thép xây dựng đường kính 10mm, đạt tiêu chuẩn quốc tế",
+      "unit": "Kg",
+      "image": "⚙️"
+    },
+    {
+      "id": "4",
+      "category": "steel",
+      "name": "Thép Hòa Phát D12",
+      "brand": "Hòa Phát",
+      "shortDesc": "Thép xây dựng đường kính 12mm, thương hiệu uy tín",
+      "unit": "Kg",
+      "image": "⚙️"
+    },
+    {
+      "id": "5",
+      "category": "steel",
+      "name": "Thép Pomina D16",
+      "brand": "Pomina",
+      "shortDesc": "Thép xây dựng đường kính 16mm, chống ăn mòn tốt",
+      "unit": "Kg",
+      "image": "⚙️"
+    },
+    {
+      "id": "6",
+      "category": "brick",
+      "name": "Gạch block Viglacera",
+      "brand": "Viglacera",
+      "shortDesc": "Gạch block không nung 10x20x40cm, cách nhiệt tốt",
+      "unit": "Viên",
+      "image": "🧱"
+    },
+    {
+      "id": "7",
+      "category": "brick",
+      "name": "Gạch đỏ Đồng Tâm",
+      "brand": "Đồng Tâm",
+      "shortDesc": "Gạch đỏ nung 8.5x9x19cm, độ bền cao",
+      "unit": "Viên",
+      "image": "🧱"
+    },
+    {
+      "id": "8",
+      "category": "brick",
+      "name": "Gạch không nung Xuân Mai",
+      "brand": "Xuân Mai",
+      "shortDesc": "Gạch không nung 7.5x10x20cm, thân thiện môi trường",
+      "unit": "Viên",
+      "image": "🧱"
+    },
+    {
+      "id": "9",
+      "category": "sand",
+      "name": "Cát vàng sông",
+      "brand": "Cát sông Thanh Hóa",
+      "shortDesc": "Cát vàng sông tự nhiên, sạch, độ mịn phù hợp xây dựng",
+      "unit": "M³",
+      "image": "⛰️"
+    },
+    {
+      "id": "10",
+      "category": "sand",
+      "name": "Đá dăm 1x2",
+      "brand": "Đá núi Thanh Hóa",
+      "shortDesc": "Đá dăm 1-2cm, dùng cho bê tông và móng nhà",
+      "unit": "M³",
+      "image": "⛰️"
+    },
+    {
+      "id": "11",
+      "category": "sand",
+      "name": "Đá dăm 4x6",
+      "brand": "Đá núi Thanh Hóa",
+      "shortDesc": "Đá dăm 4-6cm, dùng cho móng và lót đường",
+      "unit": "M³",
+      "image": "⛰️"
+    },
+    {
+      "id": "12",
+      "category": "paint",
+      "name": "Sơn Dulux nội thất",
+      "brand": "Dulux",
+      "shortDesc": "Sơn nước nội thất 18L, màu sắc đa dạng, không mùi",
+      "unit": "Thùng 18L",
+      "image": "🎨"
+    },
+    {
+      "id": "13",
+      "category": "paint",
+      "name": "Sơn Jotun ngoại thất",
+      "brand": "Jotun",
+      "shortDesc": "Sơn nước ngoại thất 18L, chống thấm tốt",
+      "unit": "Thùng 18L",
+      "image": "🎨"
+    },
+    {
+      "id": "14",
+      "category": "paint",
+      "name": "Sơn Nippon cao cấp",
+      "brand": "Nippon",
+      "shortDesc": "Sơn nước 18L, thương hiệu Nhật Bản, an toàn",
+      "unit": "Thùng 18L",
+      "image": "🎨"
+    },
+    {
+      "id": "15",
+      "category": "other",
+      "name": "Ngói lợp Đồng Tâm",
+      "brand": "Đồng Tâm",
+      "shortDesc": "Ngói lợp mái 33x42cm, chống thấm, cách nhiệt",
+      "unit": "Viên",
+      "image": "🔧"
+    },
+    {
+      "id": "16",
+      "category": "other",
+      "name": "Ống nước PVC Bình Minh",
+      "brand": "Bình Minh",
+      "shortDesc": "Ống nhựa PVC 4m, độ bền cao, không độc hại",
+      "unit": "Cây 4m",
+      "image": "🔧"
+    }
+  ]
+}

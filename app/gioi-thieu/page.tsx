@@ -1,233 +1,261 @@
-import { Building2, Target, Eye, Award, Users, CheckCircle2, TrendingUp } from 'lucide-react';
+import { Phone, Mail, MapPin, Building2, FileText, Calendar, DollarSign } from 'lucide-react';
+import Link from 'next/link';
 
 export default function GioiThieu() {
-  const values = [
-    {
-      icon: CheckCircle2,
-      title: 'Uy tín',
-      description: 'Luôn đặt uy tín và chất lượng lên hàng đầu trong mọi giao dịch'
-    },
-    {
-      icon: Users,
-      title: 'Tận tâm',
-      description: 'Phục vụ khách hàng với thái độ nhiệt tình, chu đáo nhất'
-    },
-    {
-      icon: Award,
-      title: 'Chất lượng',
-      description: 'Cam kết cung cấp sản phẩm chính hãng, chất lượng cao'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Phát triển',
-      description: 'Không ngừng đổi mới, cải tiến để phục vụ khách hàng tốt hơn'
-    }
-  ];
-
-  const milestones = [
-    { year: '2024', event: 'Thành lập công ty', description: 'Đăng ký kinh doanh ngày 27/07/2024' },
-    { year: '2024', event: 'Mở rộng kho hàng', description: 'Đầu tư kho bãi hiện đại tại Cẩm Thủy' },
-    { year: '2025', event: 'Phát triển mạng lưới', description: 'Mở rộng phạm vi phục vụ toàn tỉnh' },
-    { year: '2026', event: 'Đối tác chiến lược', description: 'Hợp tác với các nhà sản xuất hàng đầu' }
-  ];
-
   return (
-    <div>
+    <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] text-white py-20">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Về chúng tôi</h1>
-            <p className="text-xl text-orange-100">
-              Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình - Đối tác tin cậy cho mọi công trình
+      <section className="bg-[#0d3354] text-white">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl font-bold mb-4">Giới thiệu</h1>
+            <p className="text-xl text-blue-100">
+              Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình
             </p>
           </div>
         </div>
       </section>
 
-      {/* Company Info */}
-      <section className="py-20 bg-white">
+      {/* Main Content */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-blue-100 text-[#0d3354] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                🏢 Giới thiệu công ty
-              </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình
-              </h2>
-              <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-                <p>
-                  Được thành lập vào ngày 27 tháng 07 năm 2024, Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình 
-                  tự hào là đơn vị cung cấp vật liệu xây dựng uy tín tại tỉnh Thanh Hóa.
-                </p>
-                <p>
-                  Với mã số doanh nghiệp <strong>2803125183</strong>, chúng tôi chuyên cung cấp các loại vật liệu 
-                  xây dựng chất lượng cao như xi măng, sắt thép, gạch, cát đá, sơn và các vật liệu phụ trợ khác.
-                </p>
-                <p>
-                  Trụ sở chính đặt tại Nhà ông Hà Văn Cường, Thôn Trung Đô, Xã Cẩm Châu, Huyện Cẩm Thủy, 
-                  Tỉnh Thanh Hóa, Việt Nam - vị trí thuận lợi để phục vụ khách hàng trên toàn tỉnh.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-3xl p-12 shadow-2xl">
-                <Building2 size={280} className="text-white/20 mx-auto" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border-4 border-blue-100">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-[#0d3354] mb-2">500+</div>
-                  <div className="text-gray-600 font-semibold">Khách hàng tin tưởng</div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-12">
+              {/* Left Column - Main Content */}
+              <div className="lg:col-span-2 space-y-12">
+                {/* About */}
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-[#0d3354]">
+                    Về chúng tôi
+                  </h2>
+                  <div className="prose prose-lg max-w-none space-y-4">
+                    <p className="text-gray-700 leading-relaxed">
+                      Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình được thành lập ngày 24 tháng 07 năm 2024, 
+                      với mã số doanh nghiệp <strong>2803125183</strong> do Sở Kế hoạch và Đầu tư Tỉnh Thanh Hóa cấp.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Chúng tôi chuyên cung cấp các loại vật liệu xây dựng chất lượng cao bao gồm xi măng, sắt thép, 
+                      gạch xây, cát đá, sơn và các vật liệu phụ trợ khác từ các thương hiệu uy tín như Hoàng Thạch, 
+                      Nghi Sơn, Việt Nhật, Hòa Phát, Pomina, Viglacera, Dulux, Jotun...
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Với vị trí thuận lợi tại Thôn Trung Đô, Xã Cẩm Châu, Huyện Cẩm Thủy, chúng tôi sẵn sàng phục vụ 
+                      khách hàng trên toàn tỉnh Thanh Hóa và các tỉnh lân cận.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-shadow border border-blue-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                <Target className="text-white" size={32} />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Sứ mệnh</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Cung cấp vật liệu xây dựng chất lượng cao với giá cả hợp lý, góp phần xây dựng nên những 
-                công trình vững chắc, bền đẹp. Chúng tôi cam kết mang đến sự hài lòng tuyệt đối cho khách hàng 
-                thông qua dịch vụ chuyên nghiệp và tận tâm.
-              </p>
-            </div>
-            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-shadow border border-blue-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                <Eye className="text-white" size={32} />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Tầm nhìn</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Trở thành nhà cung cấp vật liệu xây dựng hàng đầu tại Thanh Hóa, được khách hàng tin tưởng 
-                và lựa chọn. Chúng tôi hướng tới việc mở rộng mạng lưới phân phối, đa dạng hóa sản phẩm 
-                và nâng cao chất lượng dịch vụ để đáp ứng mọi nhu cầu của khách hàng.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Giá trị cốt lõi
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Những giá trị mà chúng tôi luôn hướng tới trong mọi hoạt động kinh doanh
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div 
-                key={index}
-                className="text-center group"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
-                  <value.icon className="text-white" size={36} />
+                {/* Business Sectors */}
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-[#0d3354]">
+                    Ngành nghề kinh doanh
+                  </h2>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        code: '4752',
+                        name: 'Bán lẻ đồ ngũ kim, sơn, kính và thiết bị lắp đặt khác trong xây dựng trong các cửa hàng chuyên doanh'
+                      },
+                      {
+                        code: '4759',
+                        name: 'Bán lẻ đồ điện gia dụng, giường, tủ, bàn, ghế và đồ nội thất tương tự, đèn và bộ đèn điện, đồ dùng gia đình khác chưa được phân vào đâu trong các cửa hàng chuyên doanh'
+                      },
+                      {
+                        code: '4711',
+                        name: 'Bán lẻ trong các cửa hàng không chuyên doanh (cửa hàng tổng hợp); đồ uống, thuốc lá, thuốc lào; chiếm tỷ trọng lớn trong các cửa hàng kinh doanh tổng hợp'
+                      },
+                      {
+                        code: '4663',
+                        name: 'Bán buôn vật liệu, thiết bị lắp đặt khác trong xây dựng'
+                      },
+                      {
+                        code: '4690',
+                        name: 'Bán buôn tổng hợp'
+                      }
+                    ].map((sector, index) => (
+                      <div key={index} className="border-l-4 border-[#0d3354] pl-4 py-2">
+                        <div className="text-sm font-bold text-[#0d3354] mb-1">
+                          Mã ngành: {sector.code}
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">
+                          {sector.name}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              Hành trình phát triển
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Những cột mốc quan trọng trong quá trình xây dựng và phát triển công ty
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-6 items-start group"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-[#0d3354] rounded-xl flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
-                      {milestone.year}
+                {/* Mission & Vision */}
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-[#0d3354]">
+                    Sứ mệnh & Tầm nhìn
+                  </h2>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-3">Sứ mệnh</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Cung cấp vật liệu xây dựng chất lượng cao với giá cả hợp lý, góp phần xây dựng nên những 
+                        công trình vững chắc, bền đẹp. Chúng tôi cam kết mang đến sự hài lòng tuyệt đối cho khách hàng 
+                        thông qua dịch vụ chuyên nghiệp và tận tâm.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-3">Tầm nhìn</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Trở thành nhà cung cấp vật liệu xây dựng hàng đầu tại Thanh Hóa, được khách hàng tin tưởng 
+                        và lựa chọn. Chúng tôi hướng tới việc mở rộng mạng lưới phân phối, đa dạng hóa sản phẩm 
+                        và nâng cao chất lượng dịch vụ.
+                      </p>
                     </div>
                   </div>
-                  <div className="flex-1 bg-gray-800/50 rounded-2xl p-6 border border-gray-700 group-hover:border-[#0d3354] transition-colors">
-                    <h3 className="text-2xl font-bold mb-2">{milestone.event}</h3>
-                    <p className="text-gray-400">{milestone.description}</p>
-                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Tại sao chọn An Bình?
-              </h2>
-            </div>
-            <div className="bg-white rounded-3xl p-10 shadow-xl border border-blue-100">
-              <div className="space-y-6">
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Sản phẩm chính hãng</h3>
-                    <p className="text-gray-600">
-                      Cam kết 100% sản phẩm chính hãng, có nguồn gốc xuất xứ rõ ràng từ các nhà sản xuất uy tín
-                    </p>
+                {/* Why Choose Us */}
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-[#0d3354]">
+                    Cam kết của chúng tôi
+                  </h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {[
+                      {
+                        title: 'Sản phẩm chính hãng',
+                        desc: '100% hàng chính hãng, có tem nhãn và CO/CQ đầy đủ từ nhà sản xuất'
+                      },
+                      {
+                        title: 'Giá cả cạnh tranh',
+                        desc: 'Giá tốt nhất thị trường, nhiều chương trình ưu đãi cho khách hàng thân thiết'
+                      },
+                      {
+                        title: 'Giao hàng tận nơi',
+                        desc: 'Vận chuyển nhanh chóng, đúng hẹn trong khu vực Thanh Hóa và lân cận'
+                      },
+                      {
+                        title: 'Tư vấn chuyên nghiệp',
+                        desc: 'Đội ngũ nhân viên giàu kinh nghiệm, tư vấn tận tâm'
+                      }
+                    ].map((item, index) => (
+                      <div key={index} className="border-l-4 border-gray-300 pl-4 py-2 hover:border-[#0d3354] transition-colors">
+                        <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Giá cả cạnh tranh</h3>
-                    <p className="text-gray-600">
-                      Giá tốt nhất thị trường với nhiều chương trình khuyến mãi hấp dẫn cho khách hàng thân thiết
-                    </p>
+              </div>
+
+              {/* Right Column - Sidebar */}
+              <div className="lg:col-span-1">
+                <div className="sticky top-[100px] space-y-6">
+                  {/* Company Info Card */}
+                  <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-300">
+                      Thông tin doanh nghiệp
+                    </h3>
+                    <div className="space-y-4">
+                      <div>
+                        <div className="flex items-start gap-3">
+                          <Building2 className="text-[#0d3354] flex-shrink-0 mt-1" size={20} />
+                          <div>
+                            <div className="text-xs text-gray-500 font-semibold mb-1">Tên công ty</div>
+                            <div className="text-sm font-bold text-gray-900">
+                              Công ty TNHH Kinh Doanh Vật Liệu Xây Dựng An Bình
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex items-start gap-3">
+                          <FileText className="text-[#0d3354] flex-shrink-0 mt-1" size={20} />
+                          <div>
+                            <div className="text-xs text-gray-500 font-semibold mb-1">Mã số doanh nghiệp</div>
+                            <div className="text-sm font-bold text-gray-900">2803125183</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex items-start gap-3">
+                          <Calendar className="text-[#0d3354] flex-shrink-0 mt-1" size={20} />
+                          <div>
+                            <div className="text-xs text-gray-500 font-semibold mb-1">Ngày thành lập</div>
+                            <div className="text-sm font-bold text-gray-900">24/07/2024</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex items-start gap-3">
+                          <DollarSign className="text-[#0d3354] flex-shrink-0 mt-1" size={20} />
+                          <div>
+                            <div className="text-xs text-gray-500 font-semibold mb-1">Vốn điều lệ</div>
+                            <div className="text-sm font-bold text-gray-900">2.000.000.000 VNĐ</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Giao hàng tận nơi</h3>
-                    <p className="text-gray-600">
-                      Dịch vụ vận chuyển nhanh chóng, đúng hẹn trong khu vực Thanh Hóa và các tỉnh lân cận
-                    </p>
+
+                  {/* Contact Card */}
+                  <div className="bg-[#0d3354] rounded-lg p-6 text-white">
+                    <h3 className="text-lg font-bold mb-4">Liên hệ với chúng tôi</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <Phone className="flex-shrink-0 mt-1" size={18} />
+                        <div>
+                          <div className="text-xs text-blue-200 mb-1">Điện thoại</div>
+                          <a href="tel:0967565606" className="font-bold hover:text-blue-200 transition-colors">
+                            0967565606
+                          </a>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <Mail className="flex-shrink-0 mt-1" size={18} />
+                        <div>
+                          <div className="text-xs text-blue-200 mb-1">Email</div>
+                          <div className="text-sm">(Đang cập nhật)</div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3">
+                        <MapPin className="flex-shrink-0 mt-1" size={18} />
+                        <div>
+                          <div className="text-xs text-blue-200 mb-1">Địa chỉ</div>
+                          <div className="text-sm leading-relaxed">
+                            Thôn Trung Đô, Xã Cẩm Châu, Huyện Cẩm Thủy, Tỉnh Thanh Hóa
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 pt-6 border-t border-white/20">
+                      <Link
+                        href="/lien-he"
+                        className="block w-full bg-white text-[#0d3354] text-center px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors"
+                      >
+                        Gửi yêu cầu
+                      </Link>
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Tư vấn chuyên nghiệp</h3>
-                    <p className="text-gray-600">
-                      Đội ngũ nhân viên giàu kinh nghiệm, nhiệt tình tư vấn giúp khách hàng chọn được sản phẩm phù hợp
-                    </p>
+
+                  {/* Quick Links */}
+                  <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">Xem thêm</h3>
+                    <div className="space-y-2">
+                      <Link
+                        href="/san-pham"
+                        className="block text-gray-700 hover:text-[#0d3354] font-semibold py-2 border-b border-gray-200 last:border-0 transition-colors"
+                      >
+                        Sản phẩm →
+                      </Link>
+                      <Link
+                        href="/lien-he"
+                        className="block text-gray-700 hover:text-[#0d3354] font-semibold py-2 border-b border-gray-200 last:border-0 transition-colors"
+                      >
+                        Liên hệ →
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
