@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -22,13 +22,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition-colors">
-                <Facebook size={20} />
+                <span className="text-lg">📘</span>
               </a>
               <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition-colors">
-                <Youtube size={20} />
+                <span className="text-lg">📺</span>
               </a>
               <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition-colors">
-                <Linkedin size={20} />
+                <span className="text-lg">💼</span>
               </a>
             </div>
           </div>
