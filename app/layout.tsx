@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="vi">
       <body className="antialiased">
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-[73px] lg:pt-[81px]">
           {children}
         </main>
         <Footer />

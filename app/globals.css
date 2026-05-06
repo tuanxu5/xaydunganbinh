@@ -1,7 +1,6 @@
 @import "tailwindcss/theme" layer(theme);
 @import "tailwindcss/preflight" layer(base);
 @import "tailwindcss/utilities" layer(utilities);
-@import "@fontsource/plus-jakarta-sans/400.css";
 @import "@fontsource/plus-jakarta-sans/500.css";
 @import "@fontsource/plus-jakarta-sans/600.css";
 @import "@fontsource/plus-jakarta-sans/700.css";
@@ -10,6 +9,7 @@
 @layer theme {
   :root {
     --font-family-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-weight-normal: 500;
   }
 }
 
@@ -22,6 +22,7 @@
 
   body {
     font-family: var(--font-family-sans);
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

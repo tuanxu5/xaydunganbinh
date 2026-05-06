@@ -68,14 +68,14 @@ export default function Header() {
             {/* Contact Info & CTA */}
             <div className="hidden lg:flex items-center gap-4">
               <div className="flex flex-col items-end">
-                <a href="tel:0123456789" className="text-sm font-semibold text-[#0d3354] hover:text-[#1a4d7a] transition-colors">
-                  0123 456 789
+                <a href="tel:0967565606" className="text-sm font-bold text-[#0d3354] hover:text-[#1a4d7a] transition-colors">
+                  0967565606
                 </a>
-                <span className="text-xs text-gray-500">Hotline hỗ trợ</span>
+                <span className="text-xs text-gray-500 font-semibold">Hotline hỗ trợ</span>
               </div>
               <Link
                 href="/lien-he"
-                className="bg-[#0d3354] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#1a4d7a] transition-all hover:shadow-lg"
+                className="bg-[#0d3354] text-white px-6 py-2.5 rounded-lg font-bold hover:bg-[#1a4d7a] transition-all hover:shadow-lg"
               >
                 Liên hệ ngay
               </Link>
@@ -106,21 +106,21 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-gray-700 hover:text-[#0d3354] font-medium transition-colors rounded-lg hover:bg-blue-50"
+                className="px-4 py-3 text-gray-700 hover:text-[#0d3354] font-semibold transition-colors rounded-lg hover:bg-blue-50"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
           <div className="pt-4 border-t border-gray-100 space-y-3">
-            <a href="tel:0123456789" className="flex items-center gap-3 text-gray-700 hover:text-[#0d3354] transition-colors">
+            <a href="tel:0967565606" className="flex items-center gap-3 text-gray-700 hover:text-[#0d3354] transition-colors">
               <Phone size={18} />
-              <span className="font-medium">0123 456 789</span>
+              <span className="font-bold">0967565606</span>
             </a>
             <Link
               href="/lien-he"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block bg-[#0d3354] text-white px-6 py-3 rounded-lg font-medium text-center hover:bg-[#1a4d7a] transition-all"
+              className="block bg-[#0d3354] text-white px-6 py-3 rounded-lg font-bold text-center hover:bg-[#1a4d7a] transition-all"
             >
               Liên hệ ngay
             </Link>
