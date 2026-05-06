@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, Send, CheckCircle2, Building2 } from 'lucide-react';
+import { Send, CheckCircle2, Building2, Loader2 } from 'lucide-react';
 
 export default function LienHe() {
   const [formData, setFormData] = useState({
@@ -12,14 +12,40 @@ export default function LienHe() {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // THAY ĐỔI URL NÀY BẰNG WEB APP URL CỦA BẠN
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9b5TRo8stRzOo2GSVcdcWWeLelPaMxYv8whFmaA-_lBNtThQoAgh5fqxBLe4simTr/exec';
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      // no-cors mode không trả về response, nên giả định thành công
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+      }, 3000);
+
+    } catch (err) {
+      setError('Có lỗi xảy ra. Vui lòng thử lại sau.');
+      console.error('Error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -69,6 +95,12 @@ export default function LienHe() {
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {error && (
+                        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                          {error}
+                        </div>
+                      )}
+
                       <div>
                         <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2">
                           Họ và tên <span className="text-red-500">*</span>
@@ -80,7 +112,8 @@ export default function LienHe() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all disabled:bg-gray-100"
                           placeholder="Nhập họ và tên của bạn"
                         />
                       </div>
@@ -97,7 +130,8 @@ export default function LienHe() {
                             value={formData.phone}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                            disabled={isSubmitting}
+                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all disabled:bg-gray-100"
                             placeholder="0967565606"
                           />
                         </div>
@@ -111,7 +145,8 @@ export default function LienHe() {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                            disabled={isSubmitting}
+                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all disabled:bg-gray-100"
                             placeholder="email@example.com"
                           />
                         </div>
@@ -127,7 +162,8 @@ export default function LienHe() {
                           value={formData.subject}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all disabled:bg-gray-100"
                         >
                           <option value="">Chọn chủ đề</option>
                           <option value="baogia">Yêu cầu báo giá</option>
@@ -147,18 +183,29 @@ export default function LienHe() {
                           value={formData.message}
                           onChange={handleChange}
                           required
+                          disabled={isSubmitting}
                           rows={5}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none disabled:bg-gray-100"
                           placeholder="Nhập nội dung tin nhắn của bạn..."
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full bg-[#0d3354] text-white py-4 rounded-lg font-bold hover:bg-[#1a4d7a] transition-all flex items-center justify-center gap-2"
+                        disabled={isSubmitting}
+                        className="w-full bg-[#0d3354] text-white py-4 rounded-lg font-bold hover:bg-[#1a4d7a] transition-all flex items-center justify-center gap-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
                       >
-                        <Send size={20} />
-                        Gửi tin nhắn
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 size={20} className="animate-spin" />
+                            Đang gửi...
+                          </>
+                        ) : (
+                          <>
+                            <Send size={20} />
+                            Gửi tin nhắn
+                          </>
+                        )}
                       </button>
                     </form>
                   )}

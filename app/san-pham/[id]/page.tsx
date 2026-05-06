@@ -34,8 +34,9 @@ const getProductData = (id: string) => {
   };
 };
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  const product = getProductData(params.id);
+export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const product = getProductData(id);
 
   return (
     <div>
@@ -96,11 +97,6 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
               <p className="text-lg text-gray-600 mb-6 leading-relaxed font-medium">
                 {product.description}
               </p>
-
-              <div className="bg-blue-50 rounded-2xl p-6 mb-6 border border-blue-200">
-                <div className="text-sm font-bold text-gray-700 mb-2">ĐƠN VỊ TÍNH:</div>
-                <div className="text-2xl font-bold text-[#0d3354]">{product.unit}</div>
-              </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 mb-8">
