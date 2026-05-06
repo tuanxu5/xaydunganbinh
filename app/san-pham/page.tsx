@@ -76,10 +76,7 @@ export default function SanPham() {
                               : 'text-gray-700 hover:bg-gray-50'
                           }`}
                         >
-                          <span className="flex items-center gap-3">
-                            <span className="text-xl">{category.icon}</span>
-                            <span>{category.name}</span>
-                          </span>
+                          <span>{category.name}</span>
                           <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
                             selectedCategory === category.id
                               ? 'bg-white/20 text-white'

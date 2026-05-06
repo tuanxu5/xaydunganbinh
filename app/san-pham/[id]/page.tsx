@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { ArrowLeft, Phone, CheckCircle2, Package, Truck, Shield, Award } from 'lucide-react';
 import productsData from '@/data/products.json';
 
+export const runtime = 'edge';
+
 const getProductData = (id: string) => {
   const product = productsData.products.find(p => p.id === id);
   
