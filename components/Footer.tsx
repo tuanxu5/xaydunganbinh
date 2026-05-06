@@ -12,11 +12,12 @@ export default function Footer() {
           {/* Company Info - Larger Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-[#0d3354] rounded-xl blur-md opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                <div className="relative w-14 h-14 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                  <span className="text-white font-bold text-2xl">AB</span>
-                </div>
+              <div className="relative w-14 h-14">
+                <img 
+                  src="/images/logo.png" 
+                  alt="An Bình Logo" 
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-xl text-white group-hover:text-blue-200 transition-colors">An Bình</span>

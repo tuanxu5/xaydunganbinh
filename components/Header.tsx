@@ -2,11 +2,13 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,13 @@ export default function Header() {
     { href: '/lien-he', label: 'Liên hệ' },
   ];
 
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -36,14 +45,15 @@ export default function Header() {
           <div className="flex items-center justify-between py-4 lg:py-5">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-[#0d3354] rounded-xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                <div className="relative w-12 h-12 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">AB</span>
-                </div>
+              <div className="relative w-15 h-15">
+                <img 
+                  src="/images/logo.png" 
+                  alt="An Bình Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="hidden sm:flex flex-col">
-                <span className="font-bold text-lg text-gray-900 leading-tight tracking-tight">
+                <span className="font-bold text-lg text-[#0d3354] leading-tight tracking-tight">
                   An Bình
                 </span>
                 <span className="text-xs text-gray-500 font-medium">
@@ -52,30 +62,26 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-gray-700 hover:text-[#0d3354] font-medium transition-colors rounded-lg hover:bg-blue-50/50"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Contact Info & CTA */}
-            <div className="hidden lg:flex items-center gap-4">
-              <div className="flex flex-col items-end">
-                <a href="tel:0967565606" className="text-sm font-bold text-[#0d3354] hover:text-[#1a4d7a] transition-colors">
-                  0967565606
-                </a>
-                <span className="text-xs text-gray-500 font-semibold">Hotline hỗ trợ</span>
-              </div>
+            {/* Desktop Navigation & CTA */}
+            <div className="hidden lg:flex items-center gap-2">
+              <nav className="flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`px-5 py-2.5 text-sm font-bold transition-all rounded-full ${
+                      isActive(link.href)
+                        ? 'text-[#0d3354]'
+                        : 'text-gray-700 hover:text-[#0d3354] hover:bg-blue-50'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
               <Link
                 href="/lien-he"
-                className="bg-[#0d3354] text-white px-6 py-2.5 rounded-lg font-bold hover:bg-[#1a4d7a] transition-all hover:shadow-lg"
+                className="ml-2 bg-[#0d3354] text-white px-8 py-5 rounded-full text-sm font-bold hover:bg-[#1a4d7a] transition-all hover:shadow-lg hover:scale-105"
               >
                 Liên hệ ngay
               </Link>
@@ -106,7 +112,11 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-gray-700 hover:text-[#0d3354] font-semibold transition-colors rounded-lg hover:bg-blue-50"
+                className={`px-5 py-3 text-sm font-bold transition-all rounded-full ${
+                  isActive(link.href)
+                    ? 'text-[#0d3354]'
+                    : 'text-gray-700 hover:text-[#0d3354] hover:bg-blue-50'
+                }`}
               >
                 {link.label}
               </Link>
@@ -120,7 +130,7 @@ export default function Header() {
             <Link
               href="/lien-he"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block bg-[#0d3354] text-white px-6 py-3 rounded-lg font-bold text-center hover:bg-[#1a4d7a] transition-all"
+              className="block bg-[#0d3354] text-white px-6 py-3 rounded-full text-sm font-bold text-center hover:bg-[#1a4d7a] transition-all"
             >
               Liên hệ ngay
             </Link>
