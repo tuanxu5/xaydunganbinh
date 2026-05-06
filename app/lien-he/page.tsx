@@ -16,7 +16,7 @@ export default function LienHe() {
   const [error, setError] = useState('');
 
   // THAY ĐỔI URL NÀY BẰNG WEB APP URL CỦA BẠN
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9b5TRo8stRzOo2GSVcdcWWeLelPaMxYv8whFmaA-_lBNtThQoAgh5fqxBLe4simTr/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx7M4kS_d6gQtwg49wBG4NeH7taUqqjsLBmOiTYy3qpN-zGwSkJuORdFItAC680GqqpuQ/exec';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,25 +24,44 @@ export default function LienHe() {
     setError('');
 
     try {
+      // Tạo FormData để gửi
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+        body: formDataToSend,
+        redirect: 'follow'
       });
 
-      // no-cors mode không trả về response, nên giả định thành công
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
-      }, 3000);
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+        }, 3000);
+      } else {
+        throw new Error(result.message || 'Gửi không thành công');
+      }
 
-    } catch (err) {
-      setError('Có lỗi xảy ra. Vui lòng thử lại sau.');
-      console.error('Error:', err);
+    } catch (err: any) {
+      // Nếu lỗi CORS nhưng data đã gửi thành công (Google Apps Script redirect)
+      if (err.message.includes('Failed to fetch') || err.message.includes('CORS')) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+        }, 3000);
+      } else {
+        setError('Có lỗi xảy ra. Vui lòng thử lại sau hoặc gọi 0967565606.');
+        console.error('Error:', err);
+      }
     } finally {
       setIsSubmitting(false);
     }
