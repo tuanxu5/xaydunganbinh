@@ -34,7 +34,7 @@ export default function GioiThieu() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 to-orange-500 text-white py-20">
+      <section className="relative bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] text-white py-20">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -51,7 +51,7 @@ export default function GioiThieu() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block bg-blue-100 text-[#0d3354] px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 🏢 Giới thiệu công ty
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -73,12 +73,12 @@ export default function GioiThieu() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-12 shadow-2xl">
+              <div className="bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-3xl p-12 shadow-2xl">
                 <Building2 size={280} className="text-white/20 mx-auto" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border-4 border-orange-100">
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border-4 border-blue-100">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">500+</div>
+                  <div className="text-4xl font-bold text-[#0d3354] mb-2">500+</div>
                   <div className="text-gray-600 font-semibold">Khách hàng tin tưởng</div>
                 </div>
               </div>
@@ -88,11 +88,11 @@ export default function GioiThieu() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-shadow border border-orange-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-shadow border border-blue-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center mb-6 shadow-lg">
                 <Target className="text-white" size={32} />
               </div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">Sứ mệnh</h3>
@@ -102,8 +102,8 @@ export default function GioiThieu() {
                 thông qua dịch vụ chuyên nghiệp và tận tâm.
               </p>
             </div>
-            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-shadow border border-orange-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+            <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-shadow border border-blue-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center mb-6 shadow-lg">
                 <Eye className="text-white" size={32} />
               </div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">Tầm nhìn</h3>
@@ -134,7 +134,7 @@ export default function GioiThieu() {
                 key={index}
                 className="text-center group"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
                   <value.icon className="text-white" size={36} />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -168,11 +168,11 @@ export default function GioiThieu() {
                   className="flex gap-6 items-start group"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-orange-500 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-20 h-20 bg-[#0d3354] rounded-xl flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">
                       {milestone.year}
                     </div>
                   </div>
-                  <div className="flex-1 bg-gray-800/50 rounded-2xl p-6 border border-gray-700 group-hover:border-orange-500 transition-colors">
+                  <div className="flex-1 bg-gray-800/50 rounded-2xl p-6 border border-gray-700 group-hover:border-[#0d3354] transition-colors">
                     <h3 className="text-2xl font-bold mb-2">{milestone.event}</h3>
                     <p className="text-gray-400">{milestone.description}</p>
                   </div>
@@ -184,7 +184,7 @@ export default function GioiThieu() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -192,10 +192,10 @@ export default function GioiThieu() {
                 Tại sao chọn An Bình?
               </h2>
             </div>
-            <div className="bg-white rounded-3xl p-10 shadow-xl border border-orange-100">
+            <div className="bg-white rounded-3xl p-10 shadow-xl border border-blue-100">
               <div className="space-y-6">
                 <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-orange-500 flex-shrink-0 mt-1" size={24} />
+                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Sản phẩm chính hãng</h3>
                     <p className="text-gray-600">
@@ -204,7 +204,7 @@ export default function GioiThieu() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-orange-500 flex-shrink-0 mt-1" size={24} />
+                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Giá cả cạnh tranh</h3>
                     <p className="text-gray-600">
@@ -213,7 +213,7 @@ export default function GioiThieu() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-orange-500 flex-shrink-0 mt-1" size={24} />
+                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Giao hàng tận nơi</h3>
                     <p className="text-gray-600">
@@ -222,7 +222,7 @@ export default function GioiThieu() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="text-orange-500 flex-shrink-0 mt-1" size={24} />
+                  <CheckCircle2 className="text-[#0d3354] flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Tư vấn chuyên nghiệp</h3>
                     <p className="text-gray-600">

@@ -60,7 +60,7 @@ export default function LienHe() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 to-orange-500 text-white py-20">
+      <section className="relative bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] text-white py-20">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -73,7 +73,7 @@ export default function LienHe() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Info */}
@@ -91,10 +91,10 @@ export default function LienHe() {
                 {contactInfo.map((info, index) => (
                   <div 
                     key={index}
-                    className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-orange-100"
+                    className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-blue-100"
                   >
                     <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                         <info.icon className="text-white" size={24} />
                       </div>
                       <div className="flex-1">
@@ -102,7 +102,7 @@ export default function LienHe() {
                         {info.link ? (
                           <a 
                             href={info.link}
-                            className="text-gray-600 hover:text-orange-600 transition-colors whitespace-pre-line"
+                            className="text-gray-600 hover:text-[#0d3354] transition-colors whitespace-pre-line"
                           >
                             {info.content}
                           </a>
@@ -129,7 +129,7 @@ export default function LienHe() {
 
             {/* Contact Form */}
             <div>
-              <div className="bg-white rounded-3xl p-8 shadow-2xl border border-orange-100">
+              <div className="bg-white rounded-3xl p-8 shadow-2xl border border-blue-100">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   Gửi tin nhắn cho chúng tôi
                 </h2>
@@ -159,7 +159,7 @@ export default function LienHe() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                         placeholder="Nhập họ và tên của bạn"
                       />
                     </div>
@@ -176,7 +176,7 @@ export default function LienHe() {
                           value={formData.phone}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                           placeholder="0123 456 789"
                         />
                       </div>
@@ -190,7 +190,7 @@ export default function LienHe() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                           placeholder="email@example.com"
                         />
                       </div>
@@ -206,7 +206,7 @@ export default function LienHe() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                       >
                         <option value="">Chọn chủ đề</option>
                         <option value="baogia">Yêu cầu báo giá</option>
@@ -227,14 +227,14 @@ export default function LienHe() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#0d3354] focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
                         placeholder="Nhập nội dung tin nhắn của bạn..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
                     >
                       <Send size={20} />
                       Gửi tin nhắn
@@ -258,8 +258,8 @@ export default function LienHe() {
               Nhà ông Hà Văn Cường, Thôn Trung Đô, Xã Cẩm Châu, Huyện Cẩm Thủy, Tỉnh Thanh Hóa
             </p>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-orange-100">
-            <div className="bg-gradient-to-br from-orange-500 to-orange-600 h-96 flex items-center justify-center">
+          <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-blue-100">
+            <div className="bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] h-96 flex items-center justify-center">
               <div className="text-center text-white">
                 <MapPin size={64} className="mx-auto mb-4" />
                 <p className="text-xl font-semibold">Bản đồ Google Maps</p>
@@ -271,7 +271,7 @@ export default function LienHe() {
       </section>
 
       {/* Quick Contact */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-500 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
@@ -283,14 +283,14 @@ export default function LienHe() {
             <div className="flex flex-wrap gap-4 justify-center">
               <a 
                 href="tel:0123456789"
-                className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
+                className="bg-white text-[#0d3354] px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
               >
                 <Phone size={20} />
                 0123 456 789
               </a>
               <a 
                 href="mailto:info@anbinhxaydung.vn"
-                className="bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-800 transition-all border-2 border-white/20 flex items-center gap-2"
+                className="bg-[#0d3354] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0a2640] transition-all border-2 border-white/20 flex items-center gap-2"
               >
                 <Mail size={20} />
                 info@anbinhxaydung.vn

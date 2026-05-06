@@ -187,7 +187,7 @@ export default function SanPham() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 to-orange-500 text-white py-20">
+      <section className="relative bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] text-white py-20">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -212,7 +212,7 @@ export default function SanPham() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-lg font-semibold whitespace-nowrap transition-all ${
                   selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-orange-600 to-orange-500 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -224,7 +224,7 @@ export default function SanPham() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <p className="text-gray-600">
@@ -237,7 +237,7 @@ export default function SanPham() {
                 key={product.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-gray-100 group"
               >
-                <div className="bg-gradient-to-br from-orange-500 to-orange-600 h-40 flex items-center justify-center text-6xl relative overflow-hidden">
+                <div className="bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] h-40 flex items-center justify-center text-6xl relative overflow-hidden">
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
                   {product.image}
                 </div>
@@ -247,13 +247,13 @@ export default function SanPham() {
                       <h3 className="text-lg font-bold text-gray-900 mb-1">
                         {product.name}
                       </h3>
-                      <p className="text-sm text-orange-600 font-semibold">
+                      <p className="text-sm text-[#0d3354] font-semibold">
                         {product.brand}
                       </p>
                     </div>
-                    <div className="flex items-center gap-1 bg-orange-50 px-2 py-1 rounded-lg">
-                      <Star size={14} className="text-orange-500 fill-orange-500" />
-                      <span className="text-sm font-semibold text-orange-700">4.8</span>
+                    <div className="flex items-center gap-1 bg-blue-50 px-2 py-1 rounded-lg">
+                      <Star size={14} className="text-[#0d3354] fill-orange-500" />
+                      <span className="text-sm font-semibold text-[#0d3354]">4.8</span>
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 mb-3 line-clamp-2">
@@ -273,7 +273,7 @@ export default function SanPham() {
                   </div>
                   <Link 
                     href="/lien-he"
-                    className="w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
+                    className="w-full bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white py-2.5 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
                   >
                     Liên hệ báo giá
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -299,7 +299,7 @@ export default function SanPham() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Package className="text-white" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Chính hãng 100%</h3>
@@ -308,7 +308,7 @@ export default function SanPham() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <CheckCircle2 className="text-white" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Bảo hành đổi trả</h3>
@@ -317,7 +317,7 @@ export default function SanPham() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#0d3354] to-[#1a4d7a] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Star className="text-white" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Giá tốt nhất</h3>
@@ -331,7 +331,7 @@ export default function SanPham() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-500 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#0d3354] to-[#1a4d7a] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Cần tư vấn về sản phẩm?
@@ -342,13 +342,13 @@ export default function SanPham() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link 
               href="/lien-he"
-              className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
+              className="bg-white text-[#0d3354] px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all"
             >
               Liên hệ ngay
             </Link>
             <a 
               href="tel:0123456789"
-              className="bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-800 transition-all border-2 border-white/20"
+              className="bg-[#0d3354] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0a2640] transition-all border-2 border-white/20"
             >
               Gọi: 0123 456 789
             </a>
