@@ -114,7 +114,7 @@
       "brand": "Việt Nhật",
       "shortDesc": "Thép xây dựng đường kính 10mm, đạt tiêu chuẩn quốc tế",
       "unit": "Kg",
-      "image": "⚙️"
+      "image": "/images/products/satthep/thep-d10-viet-nhat.webp"
     },
     {
       "id": "4",
@@ -123,7 +123,7 @@
       "brand": "Hòa Phát",
       "shortDesc": "Thép xây dựng đường kính 12mm, thương hiệu uy tín",
       "unit": "Kg",
-      "image": "⚙️"
+      "image": "/images/products/satthep/thep-d12-hoa-phat.webp"
     },
     {
       "id": "5",
@@ -177,7 +177,7 @@
       "brand": "Đá núi Thanh Hóa",
       "shortDesc": "Đá dăm 1-2cm, dùng cho bê tông và móng nhà",
       "unit": "M³",
-      "image": "⛰️"
+      "image": "/images/products/cat/da-dam-1x2.webp"
     },
     {
       "id": "11",
@@ -186,7 +186,7 @@
       "brand": "Đá núi Thanh Hóa",
       "shortDesc": "Đá dăm 4-6cm, dùng cho móng và lót đường",
       "unit": "M³",
-      "image": "⛰️"
+      "image": "/images/products/cat/da-dam-4x6.webp"
     },
     {
       "id": "12",
@@ -195,7 +195,7 @@
       "brand": "Dulux",
       "shortDesc": "Sơn nước nội thất 18L, màu sắc đa dạng, không mùi",
       "unit": "Thùng 18L",
-      "image": "🎨"
+      "image": "/images/products/son/son-dulux-noi-that.webp"
     },
     {
       "id": "13",
@@ -204,7 +204,7 @@
       "brand": "Jotun",
       "shortDesc": "Sơn nước ngoại thất 18L, chống thấm tốt",
       "unit": "Thùng 18L",
-      "image": "🎨"
+      "image": "/images/products/son/son-jotun-ngoai-that.webp"
     },
     {
       "id": "14",
@@ -213,7 +213,7 @@
       "brand": "Nippon",
       "shortDesc": "Sơn nước 18L, thương hiệu Nhật Bản, an toàn",
       "unit": "Thùng 18L",
-      "image": "🎨"
+      "image": "/images/products/son/son-nippon-cao-cap.webp"
     },
     {
       "id": "15",
@@ -222,7 +222,7 @@
       "brand": "Đồng Tâm",
       "shortDesc": "Ngói lợp mái 33x42cm, chống thấm, cách nhiệt",
       "unit": "Viên",
-      "image": "🔧"
+      "image": "/images/products/vatlieukhac/ngoi-lop-dong-tam.webp"
     },
     {
       "id": "16",
@@ -231,7 +231,7 @@
       "brand": "Bình Minh",
       "shortDesc": "Ống nhựa PVC 4m, độ bền cao, không độc hại",
       "unit": "Cây 4m",
-      "image": "🔧"
+      "image": "/images/products/vatlieukhac/ong-nuoc-pvc-binh-minh.webp"
     }
   ]
 }
