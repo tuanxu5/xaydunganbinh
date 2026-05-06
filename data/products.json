@@ -45,7 +45,7 @@
       "shortDesc": "Xi măng Pooclăng hỗn hợp PCB30, phù hợp cho công trình dân dụng",
       "description": "Xi măng Pooclăng hỗn hợp PCB30 Hoàng Thạch là sản phẩm xi măng chất lượng cao, được sản xuất theo công nghệ hiện đại, đáp ứng tiêu chuẩn TCVN 2682:2009. Sản phẩm phù hợp cho các công trình dân dụng như xây tường, đổ móng, trát tường.",
       "unit": "Bao 50kg",
-      "image": "🏗️",
+      "image": "/images/products/ximang/xi-mang-hoang-thach.jpg",
       "specs": [
         { "label": "Độ bền", "value": "30 MPa (sau 28 ngày)" },
         { "label": "Thời gian đông kết đầu", "value": "≥ 45 phút" },
@@ -80,7 +80,7 @@
       "shortDesc": "Xi măng Pooclăng hỗn hợp PCB40, độ bền cao cho cột dầm",
       "description": "Xi măng Pooclăng hỗn hợp PCB40 Nghi Sơn là sản phẩm xi măng cao cấp với độ bền 40 MPa, phù hợp cho các công trình yêu cầu độ bền cao như cột, dầm, sàn bê tông. Sản phẩm được sản xuất bởi Công ty Xi măng Nghi Sơn - thương hiệu uy tín hàng đầu Việt Nam.",
       "unit": "Bao 50kg",
-      "image": "🏗️",
+      "image": "/images/products/ximang/xi-mang-nghi-son.png",
       "specs": [
         { "label": "Độ bền", "value": "40 MPa (sau 28 ngày)" },
         { "label": "Thời gian đông kết đầu", "value": "≥ 45 phút" },
@@ -132,7 +132,7 @@
       "brand": "Pomina",
       "shortDesc": "Thép xây dựng đường kính 16mm, chống ăn mòn tốt",
       "unit": "Kg",
-      "image": "⚙️"
+      "image": "/images/products/satthep/thep-pomina.jpg"
     },
     {
       "id": "6",
@@ -141,7 +141,7 @@
       "brand": "Viglacera",
       "shortDesc": "Gạch block không nung 10x20x40cm, cách nhiệt tốt",
       "unit": "Viên",
-      "image": "🧱"
+      "image": "/images/products/gach/gach-block-viglacera.png"
     },
     {
       "id": "7",
@@ -150,7 +150,7 @@
       "brand": "Đồng Tâm",
       "shortDesc": "Gạch đỏ nung 8.5x9x19cm, độ bền cao",
       "unit": "Viên",
-      "image": "🧱"
+      "image": "/images/products/gach/gach-do-dong-tam.jpg"
     },
     {
       "id": "8",
@@ -159,7 +159,7 @@
       "brand": "Xuân Mai",
       "shortDesc": "Gạch không nung 7.5x10x20cm, thân thiện môi trường",
       "unit": "Viên",
-      "image": "🧱"
+      "image": "/images/products/gach/gach-khong-nung-xuan-mai.png"
     },
     {
       "id": "9",
@@ -168,7 +168,7 @@
       "brand": "Cát sông Thanh Hóa",
       "shortDesc": "Cát vàng sông tự nhiên, sạch, độ mịn phù hợp xây dựng",
       "unit": "M³",
-      "image": "⛰️"
+      "image": "/images/products/cat/cat-vang-song-hong.jpg"
     },
     {
       "id": "10",

@@ -209,10 +209,18 @@ export default function HomePage() {
                   href={`/san-pham/${product.id}`}
                   className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-[#0d3354] transition-all hover:shadow-lg"
                 >
-                  <div className="bg-gray-100 h-48 flex items-center justify-center">
-                    <span className="text-7xl transform group-hover:scale-110 transition-transform">
-                      {product.image}
-                    </span>
+                  <div className="bg-white h-48 flex items-center justify-center overflow-hidden">
+                    {product.image.startsWith('/') ? (
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-contain p-4 transform group-hover:scale-110 transition-transform"
+                      />
+                    ) : (
+                      <span className="text-7xl transform group-hover:scale-110 transition-transform">
+                        {product.image}
+                      </span>
+                    )}
                   </div>
                   <div className="p-5">
                     <div className="text-xs font-bold text-[#0d3354] bg-blue-50 px-2 py-1 rounded inline-block mb-3">

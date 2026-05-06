@@ -70,8 +70,16 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Product Image */}
             <div>
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl h-96 flex items-center justify-center text-9xl shadow-xl border border-gray-300">
-                {product.image}
+              <div className="bg-white rounded-3xl h-96 flex items-center justify-center shadow-xl border border-gray-200 overflow-hidden">
+                {product.image.startsWith('/') ? (
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain p-8"
+                  />
+                ) : (
+                  <span className="text-9xl">{product.image}</span>
+                )}
               </div>
             </div>
 
